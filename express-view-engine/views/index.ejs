@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><%= title %> </title>
 </head>
 <body>
     <h1>Node JS Web Server</h1>
@@ -23,5 +23,17 @@
             <a href="/product/10">Product</a>
         </li>
     </ul>
+    <h2>Halo <%= nama %>  </h2>
+    <br>
+    <h4>Daftar Mahasiswa</h4>
+    <% if (mahasiswa.length < 1) { %>
+     <p>Data mahasiswa kosong.</p>
+    <% } else { %>
+    <% mahasiswa.forEach(mhs => { %>
+        <ul>
+            <li>Nama: <%= mhs.nama %> </li>
+            <li>Email: <%= mhs.email %> </li>
+        </ul>
+    <% })} %>
 </body>
 </html>

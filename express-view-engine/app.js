@@ -2,23 +2,32 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
+app.set("view engine", "ejs");
+
 app.get("/", (req, res) => {
-  // res.send("Hello World!");
-  res.sendFile("./index.html", { root: __dirname });
+  const mahasiswa = [
+    {
+      nama: "Muhammad",
+      email: "muhammad@gmail.com",
+    },
+    {
+      nama: "Radiant",
+      email: "radiant@gmail.com",
+    },
+    {
+      nama: "Fadilah",
+      email: "fadilah@gmail.com",
+    },
+  ];
+  res.render("index", { nama: "Radiant", title: "Belajar Node.js", mahasiswa });
 });
 
 app.get("/about", (req, res) => {
-  // res.send("Ini halaman about");
-  res.sendFile("./about.html", { root: __dirname });
+  res.render("about");
 });
 
 app.get("/contact", (req, res) => {
-  // res.json({
-  //   nama: "Radiant",
-  //   email: "radiant@gmail.com",
-  //   noHP: "081929281388",
-  // });
-  res.sendFile("./contact.html", { root: __dirname });
+  res.render("contact");
 });
 
 app.get("/product/:id", (req, res) => {
