@@ -1,10 +1,9 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-const expressLayouts = require("express-ejs-layouts");
 
+// gunakan ejs
 app.set("view engine", "ejs");
-app.use(expressLayouts);
 
 app.get("/", (req, res) => {
   const mahasiswa = [
@@ -13,29 +12,23 @@ app.get("/", (req, res) => {
       email: "muhammad@gmail.com",
     },
     {
-      nama: "Radiant",
-      email: "radiant@gmail.com",
-    },
-    {
       nama: "Fadilah",
       email: "fadilah@gmail.com",
     },
+    {
+      nama: "Radiant",
+      email: "radiant@gmail.com",
+    },
   ];
-  res.render("index", { nama: "Radiant", title: "Belajar Node.js", mahasiswa });
+  res.render("index", { title: "Halaman Utama", nama: "M Radiant", mahasiswa });
 });
 
 app.get("/about", (req, res) => {
-  res.render("about", {
-    layout: "layouts/main-layout",
-    title: "Halaman About",
-  });
+  res.render("about");
 });
 
 app.get("/contact", (req, res) => {
-  res.render("contact", {
-    layout: "layouts/main-layout",
-    title: "Halaman Kontak",
-  });
+  res.render("contact");
 });
 
 app.get("/product/:id", (req, res) => {
@@ -79,14 +72,3 @@ app.listen(port, () => {
 //       case "/about":
 //         renderHTML("./about.html", res);
 //         break;
-//       case "/contact":
-//         renderHTML("./contact.html", res);
-//         break;
-//       default:
-//         renderHTML("./index.html", res);
-//         break;
-//     }
-//   })
-//   .listen(port, () => {
-//     console.log(`Server is listening on port ${port}..`);
-//   });

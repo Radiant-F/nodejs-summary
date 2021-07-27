@@ -1,39 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %> </title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+  </head>
+  <body>
     <h1>Node JS Web Server</h1>
     <p>a</p>
     <ul>
-        <li>
-            <a href="/">Home</a>
-        </li>
-        <li>
-            <a href="/about">About</a>
-        </li>
-        <li>
-            <a href="/contact">Kontak</a>
-        </li>
-        <li>
-            <a href="/product/10">Product</a>
-        </li>
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/about">About</a>
+      </li>
+      <li>
+        <a href="/contact">Kontak</a>
+      </li>
+      <li>
+        <a href="/product/10">Product</a>
+      </li>
     </ul>
-    <h2>Halo <%= nama %>  </h2>
-    <br>
-    <h4>Daftar Mahasiswa</h4>
-    <% if (mahasiswa.length < 1) { %>
-     <p>Data mahasiswa kosong.</p>
-    <% } else { %>
+    <h2>Halo, <%= nama%></h2>
+    <h1>Daftar Mahasiswa</h1>
     <% mahasiswa.forEach(mhs => { %>
-        <ul>
-            <li>Nama: <%= mhs.nama %> </li>
-            <li>Email: <%= mhs.email %> </li>
-        </ul>
-    <% })} %>
-</body>
+    <ul>
+      <li>Nama: <%= mhs.nama %></li>
+      <li>Email: <%= mhs.email %></li>
+    </ul>
+    <% }) %>
+  </body>
 </html>
