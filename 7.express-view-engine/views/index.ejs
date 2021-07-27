@@ -8,7 +8,6 @@
   </head>
   <body>
     <h1>Node JS Web Server</h1>
-    <p>a</p>
     <ul>
       <li>
         <a href="/">Home</a>
@@ -19,17 +18,16 @@
       <li>
         <a href="/contact">Kontak</a>
       </li>
-      <li>
-        <a href="/product/10">Product</a>
-      </li>
     </ul>
     <h2>Halo, <%= nama%></h2>
     <h1>Daftar Mahasiswa</h1>
-    <% mahasiswa.forEach(mhs => { %>
+    <% if (mahasiswa.length < 1) { %>
+    <h3>Maha siswa kosong</h3>
+    <% } else { %> <% mahasiswa.forEach(mhs => { %>
     <ul>
       <li>Nama: <%= mhs.nama %></li>
       <li>Email: <%= mhs.email %></li>
     </ul>
-    <% }) %>
+    <% })} %>
   </body>
 </html>

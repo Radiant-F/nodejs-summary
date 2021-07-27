@@ -1,9 +1,11 @@
 const express = require("express");
+const expressLayouts = require("express-ejs-layouts");
 const app = express();
 const port = 3000;
 
 // gunakan ejs
 app.set("view engine", "ejs");
+app.use(expressLayouts);
 
 app.get("/", (req, res) => {
   const mahasiswa = [
@@ -24,17 +26,17 @@ app.get("/", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-  res.render("about");
+  res.render("about", {
+    title: "Halaman About",
+    layout: "../layouts/main-layout",
+  });
 });
 
 app.get("/contact", (req, res) => {
-  res.render("contact");
-});
-
-app.get("/product/:id", (req, res) => {
-  res.send(
-    `Produk: ID ${req.params.id} <br> Kategori ID: ${req.query.category}`
-  );
+  res.render("contact", {
+    title: "Halaman Contact",
+    layout: "../layouts/main-layout",
+  });
 });
 
 app.use("/", (req, res) => {
@@ -45,30 +47,3 @@ app.use("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
-
-// const http = require("http");
-// const port = 3000;
-// const fs = require("fs");
-
-// const renderHTML = (path, res) => {
-//   fs.readFile(path, (err, data) => {
-//     if (err) {
-//       res.writeHead(404);
-//       res.write("File not found");
-//     } else {
-//       res.write(data);
-//     }
-//     res.end();
-//   });
-// };
-
-// http
-//   .createServer((req, res) => {
-//     const url = req.url;
-//     res.writeHead(200, {
-//       "Content-Type": "text/html",
-//     });
-//     switch (url) {
-//       case "/about":
-//         renderHTML("./about.html", res);
-//         break;
