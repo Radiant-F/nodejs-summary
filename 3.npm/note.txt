@@ -1,0 +1,9 @@
+cara menjalankan script
+
+yang tersedia: npm start
+yang tidak tersedia: npm run dev
+
+cara menjalankan nodemon local
+
+install: npm install --save-dev nodemon
+eksekusi: jalankan lewat script (npm start)
