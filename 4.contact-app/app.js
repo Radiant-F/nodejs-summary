@@ -43,15 +43,6 @@ yargs.command({
 
 // menampilkan semua nama & no hp daftar kontak
 yargs.command({
-  command: "list",
-  describe: "Menampilkan semua nama dan no HP kontak",
-  handler() {
-    listContact();
-  },
-});
-
-// menampilkan semua nama & no hp daftar kontak
-yargs.command({
   command: "detail",
   describe: "Menampilkan detail sebuah kontak berdasarkan nama",
   builder: {
