@@ -22,20 +22,25 @@ app.get("/", (req, res) => {
       email: "radiant@gmail.com",
     },
   ];
-  res.render("index", { title: "Halaman Utama", nama: "M Radiant", mahasiswa });
+  res.render("index", {
+    title: "Halaman Utama",
+    nama: "M Radiant",
+    mahasiswa,
+    layout: "layouts/main-layout",
+  });
 });
 
 app.get("/about", (req, res) => {
   res.render("about", {
     title: "Halaman About",
-    layout: "../layouts/main-layout",
+    layout: "layouts/main-layout",
   });
 });
 
 app.get("/contact", (req, res) => {
   res.render("contact", {
     title: "Halaman Contact",
-    layout: "../layouts/main-layout",
+    layout: "layouts/main-layout",
   });
 });
 
