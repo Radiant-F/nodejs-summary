@@ -3,7 +3,7 @@
 <h1>Daftar Mahasiswa</h1>
 <% if (mahasiswa.length < 1) { %>
 <h3>Maha siswa kosong</h3>
-<% } else { %> <% mahasiswa.forEach(mhs => { %>
+<% } else { mahasiswa.forEach(mhs => { %>
 <ul>
   <li>Nama: <%= mhs.nama %></li>
   <li>Email: <%= mhs.email %></li>
