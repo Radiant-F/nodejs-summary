@@ -46,7 +46,10 @@ app.get("/contact", (req, res) => {
 
 app.use("/", (req, res) => {
   res.status(404);
-  res.send("404");
+  res.render("notfound", {
+    title: "404",
+    layout: "layouts/main-layout",
+  });
 });
 
 app.listen(port, () => {
