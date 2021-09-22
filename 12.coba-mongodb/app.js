@@ -29,26 +29,23 @@ client.connect((error, client) => {
   //     }
   //   );
 
-  // Membuat banyak data
-  //   db.collection("mahasiswa").insertMany(
-  //     [
-  //       {
-  //         nama: "Siswa",
-  //         email: "siswa@gmail.com",
-  //       },
-  //       {
-  //         nama: "Siswi",
-  //         email: "siswi@gmail.com",
-  //       },
-  //     ],
-  //     (error, result) => {
-  //       if (error) {
-  //         return console.log(error);
-  //       }
-
-  //       console.log(result);
-  //     }
-  //   );
+  //   Membuat banyak data
+  db.collection("mahasiswa").insertMany(
+    [
+      {
+        nama: "Siswa",
+        email: "siswa@gmail.com",
+      },
+      {
+        nama: "Siswi",
+        email: "siswi@gmail.com",
+      },
+    ],
+    (error, result) => {
+      if (error) return console.log(error);
+      console.log(result);
+    }
+  );
 
   // Membaca data di koleksi database
   //   console.log(
